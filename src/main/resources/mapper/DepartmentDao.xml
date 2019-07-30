@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.emit.complaint_manage.dao.DepartDao">
+    <insert id="addDepart" parameterType="com.emit.complaint_manage.domain.Department">
+        insert into department(id,name,comNum,finishComNum,freshComNum) values(#{id},#{name},#{comNum},#{finishComNum},#{freshComNum})
+    </insert>
+    <select id="findAllDepart" resultType="com.emit.complaint_manage.domain.Department">
+        select id,name,comNum,freshComNum,finishComNum
+        from department
+    </select>
+    <delete id="deleteDepartmentByName">
+        delete from department where name=#{name}
+    </delete>
+</mapper>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.emit.complaint_manage.dao.OrderDao">
+    <select id="getAllOrder" resultType="com.emit.complaint_manage.domain.Order">
+        select id,comDate,comDesc,comTitle,comType from `order`
+    </select>
+    <update id="updateOrderState" parameterType="com.emit.complaint_manage.domain.Order">
+        update `order` set state=#{state} where id=#{id}
+    </update>
+    <delete id="deleteOrder" parameterType="com.emit.complaint_manage.domain.Order">
+        delete from `order` where id=#{id}
+    </delete>
+    <insert id="addOrder" parameterType="com.emit.complaint_manage.domain.Order">
+        insert into `order` (id, comDate, comType, comName, comDesc, comTitle, state) VALUES (#{id},#{comDate},#{comName},#{comDesc},#{comTitle},#{statr})
+    </insert>
+</mapper>
