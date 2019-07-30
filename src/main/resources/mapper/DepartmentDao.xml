@@ -11,4 +11,10 @@
     <delete id="deleteDepartmentByName">
         delete from department where name=#{name}
     </delete>
+    <select id="findDepartById" resultType="com.emit.complaint_manage.domain.Department">
+        select id,name,departLabels,comNum,freshComNum,finishComNum from department where id=#{id}
+    </select>
+    <update id="editDepartName">
+        update department set name=#{name} where id=#{id}
+    </update>
 </mapper>

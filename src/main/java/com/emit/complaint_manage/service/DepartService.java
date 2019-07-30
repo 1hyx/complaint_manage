@@ -27,13 +27,20 @@ public interface DepartService {
 
     /**
      * 修改部门名称
-     * @param name
+     * @param name,id
      */
-    void editDepartByName(String name);
+    int editDepartByName(String name, int id);
 
     /**
      * 编辑部门标签
      * @param labels
      */
     void editDepartByLabel(List<String> labels);
+
+    /**
+     * 依据id找到部门信息
+     * @param id
+     * @return
+     */
+    Department findDepartById(int id);
 }

@@ -26,6 +26,13 @@ public class ComplaintManageApplicationTests {
     }
 
     @Test
+    public void deleteDepartTest(){
+        String name = "dept2";
+        int res = departDao.deleteDepartmentByName(name);
+        Assert.assertEquals(res,1);
+    }
+
+    @Test
     public void contextLoads() {
     }
 

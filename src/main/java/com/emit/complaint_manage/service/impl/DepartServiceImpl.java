@@ -46,8 +46,8 @@ public class DepartServiceImpl implements DepartService {
      * @param name
      */
     @Override
-    public void editDepartByName(String name) {
-
+    public int editDepartByName(String name, int id) {
+        return departDao.editDepartName(name,id);
     }
     /**
      * 更新部门标签
@@ -56,5 +56,10 @@ public class DepartServiceImpl implements DepartService {
     @Override
     public void editDepartByLabel(List<String> labels) {
 
+    }
+
+    @Override
+    public Department findDepartById(int id) {
+        return departDao.findDepartById(id);
     }
 }
